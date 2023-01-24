@@ -5,6 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { CoreModule } from './core/core.module';
+import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
+import { ErrorInterceptor } from './core/interceptors/error.interceptor';
+import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -14,11 +19,19 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    CoreModule,
+    NgxSpinnerModule
 
     
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass:LoadingInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass:ErrorInterceptor, multi: true},
+    // {provide: HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass:JwtInterceptor, multi: true},
+  ],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }
