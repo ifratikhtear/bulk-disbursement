@@ -18,43 +18,25 @@ export class AppMenuComponent implements OnInit {
         label: 'Home',
         items: [
           { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/admin'] },
-          { label: 'Customer', icon: 'pi pi-fw pi-users', routerLink: ['/admin/customers'] }
         ]
       },
       {
-        label: 'Billing',
+        label: 'Salary Disbursment',
         items: [
-          { label: 'Billing Integrations', icon: 'pi pi-fw pi-home', routerLink: ['/admin/billing-integrations'] },
-          { label: 'Dynamic Billing', icon: 'pi pi-fw pi-home', routerLink: ['/admin/dynamic-billing'] },
-          {
-            label: 'Biller Management',
-            icon: 'uil-bill',
-            items: [
-              {
-                label: 'Biller Category',
-                icon: 'uil-bill',
-                routerLink: ['/admin/biller-management/category-list']
-              },
-              {
-                label: 'Billers',
-                icon: 'uil-bitcoin-circle',
-                routerLink: ['/admin/biller-management/biller-list']
-              },
-            ]
-          },
+          { label: 'Bulk Salary', icon: 'pi pi-money-bill', routerLink: ['/admin/billing-integrations'] },
+          { label: 'Dynamic Billing', icon: 'pi pi-money-bill', routerLink: ['/admin/dynamic-billing'] },
         ]
       },
       {
         label: 'Administration',
-        icon: 'pi pi-fw pi-briefcase',
         items: [
           {
             label: 'Users and Roles',
-            icon: 'uil-users-alt',
+            icon: 'pi pi-fw pi-briefcase',
             items: [
               {
                 label: 'User Management',
-                icon: 'uil-users-alt',
+                icon: 'pi pi-users',
                 routerLink: ['/admin/users']
               },
               {
@@ -65,41 +47,6 @@ export class AppMenuComponent implements OnInit {
 
             ]
           },
-          {
-            label: 'Charges and Fees',
-            icon: 'uil-bill',
-            items: [
-              {
-                label: 'Charge Configuration',
-                icon: 'uil-dollar-sign',
-                routerLink: ['/admin/charges-and-gl']
-              },
-              {
-                label: 'Limit Configuration',
-                icon: 'uil-traffic-barrier',
-                routerLink: ['/admin/limit']
-              },
-
-            ]
-          },
-          {
-            label: 'Transaction',
-            icon: 'uil-invoice',
-            items: [
-              {
-                label: 'Transaction Category',
-                icon: 'pi pi-fw pi-lock',
-                routerLink: ['/admin/transaction-category']
-              },
-              {
-                label: 'Transaction Type',
-                icon: 'pi pi-fw pi-times-circle',
-                routerLink: ['/admin/transaction-feature']
-              },
-            ]
-          },
-          
-
         ]
       },
       {
