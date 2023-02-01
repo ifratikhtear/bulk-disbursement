@@ -7,6 +7,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { FormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { InputTextModule } from 'primeng/inputtext';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 @NgModule({
     imports: [
@@ -18,6 +19,6 @@ import { InputTextModule } from 'primeng/inputtext';
         FormsModule,
         PasswordModule
     ],
-    declarations: [LoginComponent]
+    declarations: [LoginComponent, ResetPasswordComponent]
 })
 export class LoginModule { }
